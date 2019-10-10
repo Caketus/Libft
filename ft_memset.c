@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 09:30:41 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/10 18:35:51 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/10 18:42:17 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,4 @@ void	*ft_memset(void *b, int c, size_t len)
 		 len--;
 	}
 	return (b);
-}
-
-int		main(void)
-{
-	printf("%s", ft_memset("Yo les boiz", 5, 8));
 }
