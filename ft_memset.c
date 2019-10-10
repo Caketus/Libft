@@ -6,22 +6,27 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 09:30:41 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/10 16:40:01 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/10 18:35:51 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*ptr;
+	unsigned char	unsig_char_c;
 
-	ptr = b;
+	unsig_char_c = (unsigned char)c;
 	while (len > 0)
 	{
-		*ptr = c;
-		ptr++;
-		len--;
+		((unsigned char *)b)[len] = unsig_char_c;
+		 len--;
 	}
 	return (b);
+}
+
+int		main(void)
+{
+	printf("%s", ft_memset("Yo les boiz", 5, 8));
 }
