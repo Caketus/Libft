@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:37:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/07 11:05:48 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/10 10:40:33 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_atoi(char *str)
 	while (str[x] == '\t' || str[x] == '\v' || str[x] == '\n'
 			|| str[x] == '\r' || str[x] == '\f' || str[x] == ' ')
 		x++;
-	while (str[x] == '+' || str[x] == '-')
+	if (str[x] == '+' || str[x] == '-')
 	{
 		if (str[x] == '-')
 			symb = symb * (-1);
@@ -33,5 +33,5 @@ int		ft_atoi(char *str)
 		nb = (nb * 10) + str[x] - 48;
 		x++;
 	}
-	return (nb * symb);
+	return (str[x] == ('-' | '+') ? (0) : (nb * symb));
 }
