@@ -6,11 +6,11 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:37:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/10 10:40:33 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/10 16:38:37 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int		x;
 	int		symb;
