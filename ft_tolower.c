@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 08:59:34 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/10 09:28:50 by mkravetz         ###   ########.fr       */
+/*   Created: 2019/10/10 09:24:45 by mkravetz          #+#    #+#             */
+/*   Updated: 2019/10/10 09:28:34 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_tolower(int c)
 {
-	unsigned	int x;
-
-	x = 0;
-	if (n == 0)
-		return (0);
-	while ((s1[x] != '\0') && (s2[x] != '\0') && (x < n - 1))
-	{
-		if (s1[x] != s2[x])
-			break ;
-		x++;
-	}
-	return (s1[x] - s2[x]);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
