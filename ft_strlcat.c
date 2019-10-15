@@ -6,35 +6,37 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:02:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/11 18:04:34 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/15 19:35:11 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int sum;
+	char		*ptrdst;
+	const char	*ptrsrc;
+	size_t		n;
+	size_t		len_diff;
 
-	i = 0;
-	j = 0;
-	sum = 0;
-	while (dest[i] && i < size)
-		i++;
-	sum += i;
-	while (src[j])
-		j++;
-	sum += j;
-	if (i == sum)
-		return (sum);
-	j = 0;
-	while (src[j] && ((i + j) < sum - 1))
+	ptrdst = dst;
+	ptrsrc = src;
+	n = size;
+	while (n-- != 0 && *ptrdst)
+		ptrdst++;
+	len_diff = ptrdst - dst;
+	n = size - len_diff;
+	if (n == 0)
+		return (len_diff + ft_strlen(ptrsrc));
+	while (*ptrsrc)
 	{
-		dest[i + j] = src[j];
-		j++;
+		if (n != 1)
+		{
+			*ptrdst++ = *ptrsrc;
+			n--;
+		}
+		ptrsrc++;
 	}
-	dest[i + j] = '\0';
-	return (sum);
+	*ptrdst = '\0';
+	return (len_diff + (ptrsrc - src));
 }
