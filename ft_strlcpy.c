@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 10:28:48 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/15 18:39:12 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/17 19:01:31 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	x;
-	x = 0;
 
+	x = 0;
 	if (size == 0)
 		return (ft_strlen(src));
 	while (x < size - 1 && src[x] != '\0')
