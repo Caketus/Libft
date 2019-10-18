@@ -6,22 +6,13 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:06:47 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/11 17:38:28 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/18 17:54:41 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (n)
-	{
-		*str = '\0';
-		str++;
-		n--;
-	}
+	ft_memset(s, 0, n);
 }
