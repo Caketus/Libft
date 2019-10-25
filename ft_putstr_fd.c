@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 18:04:38 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/18 19:15:58 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/25 16:39:35 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (*s)
-		write(fd, s, ft_strlen(s));
+	if (s)
+	{
+		while (*s != '\0')
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
+	}
 }

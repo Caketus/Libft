@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:37:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/17 20:12:53 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/25 15:35:23 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 */
 
 #include "libft.h"
-#define MIN_SUPERLONG 9223372036854775808
 #define MAX_SUPERLONG 9223372036854775807
 
-int		ft_isspace_and_pos_neg(const char *str, int *symb)
+int		ft_isspace_and_symb(const char *str, int *symb)
 {
-	int						x;
-	unsigned long long		nb;
+	int		x;
+	long	nb;
 
 	x = 0;
 	*symb = 1;
@@ -40,20 +39,19 @@ int		ft_isspace_and_pos_neg(const char *str, int *symb)
 
 int		ft_atoi(const char *str)
 {
-	int						x;
-	unsigned long long		nb;
-	int						symb;
+	int		x;
+	long	nb;
+	int		symb;
 
 	nb = 0;
-	x = ft_isspace_and_pos_neg(str, &symb);
+	x = ft_isspace_and_symb(str, &symb);
 	while (str[x] >= '0' && str[x] <= '9')
 	{
-		nb = (nb * 10) + str[x] - 48;
+		if ((nb * 10) + str[x] - 48 >= nb)
+			nb = (nb * 10) + str[x] - 48;
+		else
+			return ((symb == -1) ? 0 : -1);
 		x++;
 	}
-	if ((nb > MAX_SUPERLONG) && (symb == 1))
-		return (-1);
-	if ((nb > MIN_SUPERLONG) && (symb == -1))
-		return (0);
 	return (str[x] == ('-' | '+') ? (0) : (nb * symb));
 }
