@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 17:32:27 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/28 09:50:24 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/28 14:51:21 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,22 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*concated;
+	char	*joined;
+	int		len_s1;
+	int		x;
 
-	concated = ft_strcpy(concated, s1);
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if ((concated = (char*)malloc(sizeof(char)
-					* (ft_strlen(s1) + ft_strlen(s2) + 1))) == NULL)
+	len_s1 = ft_strlen(s1);
+	x = ft_strlen(s2);
+	if (!(joined = (char *)malloc(sizeof(char) * (len_s1 + x + 1))))
 		return (NULL);
-	return (ft_strcat(concated, s2));
+	x = -1;
+	while (s1[++x])
+		joined[x] = s1[x];
+	x = -1;
+	while (s2[++x])
+		joined[len_s1 + x] = s2[x];
+	joined[len_s1 + x] = '\0';
+	return (joined);
 }
