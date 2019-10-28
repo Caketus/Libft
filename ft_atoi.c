@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:37:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/25 15:35:23 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/28 17:39:33 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "libft.h"
 #define MAX_SUPERLONG 9223372036854775807
 
-int		ft_isspace_and_symb(const char *str, int *symb)
+static int		ft_isspace_and_symb(const char *str, int *symb)
 {
 	int		x;
 	long	nb;
@@ -37,7 +37,7 @@ int		ft_isspace_and_symb(const char *str, int *symb)
 	return (x);
 }
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int		x;
 	long	nb;
