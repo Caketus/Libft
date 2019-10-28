@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 17:32:27 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/28 09:50:24 by mkravetz         ###   ########.fr       */
+/*   Created: 2019/10/28 09:53:43 by mkravetz          #+#    #+#             */
+/*   Updated: 2019/10/28 09:56:26 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*concated;
-
-	concated = ft_strcpy(concated, s1);
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	if ((concated = (char*)malloc(sizeof(char)
-					* (ft_strlen(s1) + ft_strlen(s2) + 1))) == NULL)
-		return (NULL);
-	return (ft_strcat(concated, s2));
+	while (*src)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (dest);
 }
