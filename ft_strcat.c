@@ -6,22 +6,27 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 09:44:36 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/28 09:47:06 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/10/29 16:18:48 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	while (*dest)
+	unsigned int	x;
+	unsigned int	y;
+
+	x = 0;
+	while (dest[x])
 	{
-		dest++;
+		x++;
 	}
-	while (*src)
+	y = 0;
+	while (src[y])
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[x] = src[y];
+		x++;
+		y++;
 	}
-	*dest = '\0';
+	dest[x] = '\0';
 	return (dest);
 }
