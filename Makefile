@@ -6,7 +6,7 @@
 #    By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/10 16:08:07 by mkravetz          #+#    #+#              #
-#    Updated: 2019/10/30 16:36:43 by mkravetz         ###   ########.fr        #
+#    Updated: 2019/10/31 16:55:57 by mkravetz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = ft_atoi.c ft_isdigit.c ft_split.c ft_bzero.c ft_isprint.c \
 	 ft_memmove.c ft_memcmp.c ft_strrchr.c ft_strnstr.c ft_calloc.c \
 	 ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_strmapi.c \
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-	 ft_strcat.c ft_strcpy.c ft_itoa.c
+	 ft_strcat.c ft_strcpy.c ft_itoa.c ft_strndup.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
