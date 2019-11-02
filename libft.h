@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:18:08 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/31 16:55:44 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/02 18:19:57 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
 
