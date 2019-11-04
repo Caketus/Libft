@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:25:22 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/30 20:33:01 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/04 17:48:39 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int	count_len(int num)
 
 char		*ft_itoa(int n)
 {
-	unsigned int	num;
-	int				sign;
-	int				size;
-	char			*new;
+	size_t	num;
+	int		sign;
+	int		size;
+	char	*new;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
