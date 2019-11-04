@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 17:09:39 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/31 17:42:34 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/04 17:50:46 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static void		*ft_free(char **s)
 	int	x;
 
 	x = 0;
-	while (s[x] != '\0')
+	while (s[x])
 	{
 		free(s[x]);
+		s[x] = NULL;
 		x++;
 	}
 	free(s);
