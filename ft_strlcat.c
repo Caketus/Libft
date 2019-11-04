@@ -6,11 +6,15 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:02:07 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/15 19:35:11 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:30:59 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Line 37 --> because n stops at '/0'
+*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
