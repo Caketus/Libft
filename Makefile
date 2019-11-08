@@ -6,14 +6,11 @@
 #    By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/10 16:08:07 by mkravetz          #+#    #+#              #
-#    Updated: 2019/10/31 16:55:57 by mkravetz         ###   ########.fr        #
+#    Updated: 2019/11/08 18:46:39 by mkravetz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-FLAGS = -Wall -Werror -Wextra
-
-NAME = libft.a
+.PHONY: re, clean, fclean, all
 
 SRC = ft_atoi.c ft_isdigit.c ft_split.c ft_bzero.c ft_isprint.c \
 	 ft_memset.c ft_strchr.c ft_strlen.c ft_isalnum.c ft_memcmp.c \
@@ -23,23 +20,38 @@ SRC = ft_atoi.c ft_isdigit.c ft_split.c ft_bzero.c ft_isprint.c \
 	 ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_strmapi.c \
 	 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	 ft_strcat.c ft_strcpy.c ft_itoa.c ft_strndup.c
-OBJ = $(SRC:.c=.o)
+
+SRC2= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_listsize_bonus.c \
+	  ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	  ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+
+NAME= libft.a
+
+CC= gcc
+CFLAGS= -Wall -Wextra -Werror
+
+RM= rm -f
+INC= libft.h
+AR= ar rc
+
+OBJ=$(SRC:.c=.o)
+OBJ2=$(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) libft.h
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(INC)
+	$(AR) $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $<
+bonus: $(OBJ2) $(INC)
+	$(AR) $(NAME) $(OBJ2)
+
+%.c: %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ) $(OBJ2)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
-
-so: $(OBJ) libft.h
-	$(CC) -shared -fPIC -Wl,-soname,libft.so -o libft.so $(OBJ)
