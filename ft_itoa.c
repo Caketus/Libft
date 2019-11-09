@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:25:22 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/11/04 17:55:28 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/09 20:59:49 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char		*ft_itoa(int n)
 	int		size;
 	char	*new;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	sign = (n < 0) ? 1 : 0;
 	num = (n < 0) ? -n : n;
 	size = (count_len(n));
