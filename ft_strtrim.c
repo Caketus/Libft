@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 17:04:21 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/28 18:35:29 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:15:43 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 
 	if ((s1 == NULL) || (set == NULL))
-		return (0);
+		return (NULL);
 	len = ft_strlen(s1);
 	x = 0;
 	while (verify(s1[x], set))
