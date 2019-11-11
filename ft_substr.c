@@ -6,7 +6,7 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 17:10:02 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/10/28 18:35:27 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/11 15:38:02 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) - (size_t)start <= len)
 		len = ft_strlen(s) - (size_t)start;
-	if ((size_t)start >= ft_strlen(s))
+	if ((size_t)start > ft_strlen(s))
 		len = 0;
 	if ((sub = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
@@ -36,4 +36,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	sub[x] = '\0';
 	return (sub);
+}
+
+#include <stdio.h>
+
+int		main(void)
+{
+	printf("%s\n", ft_substr("Cou.", 4, 2));
 }
