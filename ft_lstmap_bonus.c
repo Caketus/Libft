@@ -6,15 +6,15 @@
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 22:48:50 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/11/11 15:31:12 by mkravetz         ###   ########.fr       */
+/*   Updated: 2019/11/11 15:41:59 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * Marche pas aux tests parce que del est protected
- * (enlever le '|| !del' ligne 24 pour test)
+** Marche pas aux tests parce que del est protected
+** (enlever le '|| !del' ligne 24 pour test)
 */
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
