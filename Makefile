@@ -6,7 +6,7 @@
 #    By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/10 16:08:07 by mkravetz          #+#    #+#              #
-#    Updated: 2020/02/15 20:04:34 by mkravetz         ###   ########.fr        #
+#    Updated: 2020/02/16 00:48:41 by mkravetz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = 	ft_atoi.c				ft_isdigit.c		ft_bzero.c 			ft_isprint.c 			ft_strlcat.c\
 		ft_strrchr.c 			ft_itoa.c 			ft_memcmp.c 		ft_strlcpy.c \
 		ft_strndup.c 			ft_strcat.c 		ft_strcpy.c 		ft_itoa_convert_base.c \
 		ft_strcapitalize.c 		ft_llutoa_convert_base.c				ft_putchar.c			ft_putstr.c\
-		ft_check.c
+		ft_check.c				ft_strstock.c
 
 SRC_B = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
 	  ft_lstclear_bonus.c ft_lstdelone_bonus.c \
