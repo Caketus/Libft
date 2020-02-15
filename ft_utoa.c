@@ -1,20 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 16:05:03 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/11/10 22:50:57 by mkravetz         ###   ########.fr       */
+/*   Created: 2020/01/28 11:27:00 by mkravetz          #+#    #+#             */
+/*   Updated: 2020/01/28 13:53:50 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+static int	count_len(unsigned int num)
 {
-	if (c >= 0 && c <= 127)
+	int x;
+
+	x = 0;
+	if (num == 0)
 		return (1);
-	return (0);
+	while (num != 0)
+	{
+		num = num / 10;
+		x++;
+	}
+	return (x);
+}
+
+char		*ft_utoa(unsigned int n)
+{
+	size_t	num;
+	int		size;
+	char	*new;
+
+	num = n;
+	size = (count_len(n));
+	if ((new = (char*)malloc(sizeof(char) * (size + 1))) == NULL)
+		return (NULL);
+	new[size] = '\0';
+	while (size-- > 0)
+	{
+		new[size] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (new);
 }

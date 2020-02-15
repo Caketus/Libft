@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkravetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 16:05:03 by mkravetz          #+#    #+#             */
-/*   Updated: 2019/11/10 22:50:57 by mkravetz         ###   ########.fr       */
+/*   Created: 2020/01/25 17:15:54 by mkravetz          #+#    #+#             */
+/*   Updated: 2020/01/28 13:59:51 by mkravetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+char	*ft_strcapitalize(char *str)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int x;
+
+	x = 0;
+	while (str[x] != '\0')
+	{
+		if (str[x] >= 'a' && str[x] <= 'z')
+			str[x] -= 32;
+		x++;
+	}
+	return (str);
 }
